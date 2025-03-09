@@ -1,57 +1,13 @@
-'use client'
-import { useState } from 'react';
+export const dynamic = 'force-dynamic';
+import SearchFilter from "@/components/Blogs/SearchFilter";
+import { PrismaClient } from "@prisma/client";
 
-const BlogPage = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedTag, setSelectedTag] = useState('all');
-  const [sortBy, setSortBy] = useState('createdAt');
+const prisma = new PrismaClient()
 
-  // Sample blog data (in a real app, this would come from an API)
-  const blogs = [
-    {
-      id: '1',
-      title: 'What does it take to become a web developer?',
-      description: 'Web development, also known as website development...',
-      content: 'Full content here...',
-      createdAt: new Date('2023-10-10'),
-      tags: ['Web Developer', 'Tech', 'Skill'],
-      images: [{ url: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d' }]
-    },
-    {
-      id: '1',
-      title: 'What does it take to become a web developer?',
-      description: 'Web development, also known as website development...',
-      content: 'Full content here...',
-      createdAt: new Date('2023-10-10'),
-      tags: ['Web Developer', 'Tech', 'Skill'],
-      images: [{ url: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d' }]
-    },
-    {
-      id: '1',
-      title: 'What does it take to become a web developer?',
-      description: 'Web development, also known as website development...',
-      content: 'Full content here...',
-      createdAt: new Date('2023-10-10'),
-      tags: ['Web Developer', 'Tech', 'Skill'],
-      images: [{ url: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d' }]
-    },
-    // Add more sample blogs as needed
-  ];
 
-  // Filtering and sorting logic
-  const filteredBlogs = blogs
-    .filter(blog => 
-      blog.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
-      (selectedTag === 'all' || blog.tags.includes(selectedTag))
-    )
-    .sort((a, b) => {
-      if (sortBy === 'createdAt') return new Date(b.createdAt) - new Date(a.createdAt);
-      if (sortBy === 'title') return a.title.localeCompare(b.title);
-      return 0;
-    });
-
-  const availableTags = ['all', ...new Set(blogs.flatMap(blog => blog.tags))];
-
+const BlogPage = async () => {
+const blogs = await prisma.blog.findMany({ include: { images: true ,tags: true } });
+console.log(blogs)
   return (
     <div id="webcrumbs" className="bg-gray-800 min-h-screen">
       <div className="w-full max-w-7xl mx-auto py-12 px-6 text-white">
@@ -70,56 +26,10 @@ const BlogPage = () => {
           </button>
         </div>
 
-        {/* Search and Filter Section */}
-        <div className="bg-gray-700 p-6 rounded-lg mb-10 animate-fade-in">
-          <div className="flex flex-col sm:flex-row gap-4 items-center">
-            {/* Search Bar */}
-            <div className="relative w-full sm:w-1/3">
-              <input
-                type="text"
-                placeholder="Search blogs..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-gray-800 text-white px-4 py-2 rounded-full 
-                  border border-gray-600 focus:border-cyan-400 focus:ring-2 
-                  focus:ring-cyan-400/20 transition duration-300 outline-none"
-              />
-              <span className="material-symbols-outlined absolute right-3 top-2.5 
-                text-gray-400">search</span>
-            </div>
-
-            {/* Tag Filter */}
-            <select
-              value={selectedTag}
-              onChange={(e) => setSelectedTag(e.target.value)}
-              className="bg-gray-800 text-white px-4 py-2 rounded-full 
-                border border-gray-600 focus:border-cyan-400 
-                hover:bg-gray-600 transition duration-300"
-            >
-              {availableTags.map(tag => (
-                <option key={tag} value={tag}>
-                  {tag === 'all' ? 'All Tags' : tag}
-                </option>
-              ))}
-            </select>
-
-            {/* Sort By */}
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
-              className="bg-gray-800 text-white px-4 py-2 rounded-full 
-                border border-gray-600 focus:border-cyan-400 
-                hover:bg-gray-600 transition duration-300"
-            >
-              <option value="createdAt">Sort by Date</option>
-              <option value="title">Sort by Title</option>
-            </select>
-          </div>
-        </div>
-
+        <SearchFilter/>
         {/* Blog List */}
         <div className="space-y-10">
-          {filteredBlogs.map((blog, index) => (
+          {blogs.map((blog, index) => (
             <div 
               key={blog.id}
               className="flex flex-col sm:flex-row gap-6 mb-6 
@@ -155,7 +65,6 @@ const BlogPage = () => {
                       className="bg-gray-700 text-xs px-2 py-1 rounded text-gray-300 
                         hover:bg-cyan-400 hover:text-gray-800 cursor-pointer 
                         transform hover:scale-105 transition duration-300"
-                      onClick={() => setSelectedTag(tag)}
                     >
                       {tag}
                     </span>
@@ -175,7 +84,7 @@ const BlogPage = () => {
               </div>
             </div>
           ))}
-          {filteredBlogs.length === 0 && (
+          {blogs.length === 0 && (
             <p className="text-center text-gray-400">No blogs found matching your criteria.</p>
           )}
         </div>

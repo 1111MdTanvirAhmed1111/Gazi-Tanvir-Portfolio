@@ -2,7 +2,7 @@ import { Geist, Geist_Mono , Poppins, Roboto , Orbitron, Open_Sans, Lato,  } fro
 import "./globals.css";
 import { Navbar } from './../components/Navbar';
 import MouseFollowClient from './../components/MouseFollowClient';
-import Footer from './../components/Footer';
+import Footer from '../components/Home/Footer';
 
 
 const orbitron = Orbitron({
