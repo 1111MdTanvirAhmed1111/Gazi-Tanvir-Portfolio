@@ -1,6 +1,8 @@
 export const dynamic = 'force-dynamic';
 import SearchFilter from "@/components/Blogs/SearchFilter";
+
 import { PrismaClient } from "@prisma/client";
+import Link from "next/link";
 
 const prisma = new PrismaClient()
 
@@ -53,10 +55,10 @@ console.log(blogs)
                 <p className="text-sm text-gray-400 mb-2 line-clamp-2">
                   {blog.description}
                 </p>
-                <a href="#" className="text-cyan-400 text-sm inline-block 
+                <Link href={`/blogs/${blog.id}` }className="text-cyan-400 text-sm inline-block 
                   hover:underline hover:text-cyan-300 transition duration-300">
                   Read More →
-                </a>
+                </Link>
 
                 <div className="flex gap-4 mt-3 flex-wrap items-center">
                   {blog.tags.map(tag => (

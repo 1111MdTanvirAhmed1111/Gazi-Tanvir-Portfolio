@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaApple, FaAndroid } from 'react-icons/fa';
+import { SiNextdotjs, SiExpress, SiReact, SiPrisma, SiMongodb } from 'react-icons/si'; // New tech icons
+import { FaApple, FaAndroid } from 'react-icons/fa';
 import { MdComputer, MdSmartphone } from 'react-icons/md';
 
 export const Skills = () => {
@@ -7,7 +8,7 @@ export const Skills = () => {
     {
       icon: <MdComputer className="text-4xl text-cyan-400" />,
       title: 'Web Development',
-      desc: 'HTML · CSS · JS · React',
+      desc: 'Next.js · Express.js · React.js · Prisma · MongoDB', // Updated description
     },
     {
       icon: <MdSmartphone className="text-4xl text-cyan-400" />,
@@ -17,10 +18,11 @@ export const Skills = () => {
   ];
 
   const techStack = [
-    { icon: <FaHtml5 className="text-4xl text-white" />, name: 'HTML', color: 'from-red-500 to-red-600' },
-    { icon: <FaCss3Alt className="text-4xl text-white" />, name: 'CSS', color: 'from-blue-500 to-blue-600' },
-    { icon: <FaJs className="text-4xl text-white" />, name: 'JS', color: 'from-yellow-500 to-yellow-600' },
-    { icon: <FaReact className="text-4xl text-white" />, name: 'React', color: 'from-cyan-500 to-cyan-600' },
+    { icon: <SiNextdotjs className="text-4xl text-white" />, name: 'Next.js', color: ' scale-190 hover:scale-210 ' }, // Next.js is black-themed
+    { icon: <SiExpress className="text-4xl text-white" />, name: 'Express.js', color: 'from-gray-500 to-gray-700' }, // Express.js in white
+    { icon: <SiReact className="text-4xl text-white" />, name: 'React.js', color: 'from-cyan-500 to-cyan-600' }, // React's cyan theme
+    { icon: <SiPrisma className="text-4xl text-white" />, name: 'Prisma', color: 'from-blue-600 to-blue-800' }, // Prisma's blue theme
+    { icon: <SiMongodb className="text-4xl text-white" />, name: 'MongoDB', color: 'from-green-500 to-green-700' }, // MongoDB's green theme
   ];
 
   return (
@@ -37,7 +39,7 @@ export const Skills = () => {
                 </div>
               </div>
             </div>
-            <div className="text-5xl text-cyan-400 font-mono animate-pulse">&lt;/&gt;</div>
+            <div className="text-5xl text-cyan-400 font-mono animate-pulse"></div>
           </div>
 
           {/* Skills Title with Underline */}
@@ -66,11 +68,11 @@ export const Skills = () => {
           </div>
 
           {/* Tech Stack Circles */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-16">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-12 md:gap-16"> {/* Changed to 5 columns */}
             {techStack.map((tech, index) => (
-              <div key={index} className="flex flex-col items-center group">
+              <div key={index} className="flex flex-col items-center group ">
                 <div
-                  className={`w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-br ${tech.color} flex items-center justify-center mb-4 transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-lg`}
+                  className={` rounded-full animate-pulse bg-gradient-to-br p-2 ${tech.color} flex items-center justify-center mb-4 transform transition-all duration-300 scale-140 group-hover:scale-180 group-hover:rotate-6 shadow-lg`}
                 >
                   {tech.icon}
                 </div>

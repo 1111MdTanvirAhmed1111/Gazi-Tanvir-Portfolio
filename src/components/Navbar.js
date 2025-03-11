@@ -8,6 +8,7 @@ export const Navbar = () => {
     const navLinks = [
       { name: "Home", icon: <FaHome className="h-5 w-5 text-teal-400" />, href: "/" },
       { name: "Blogs", icon: null, href: "/blogs" },
+      { name: "About", icon: null, href: "/about" },
     ];
   
     const socialLinks = [

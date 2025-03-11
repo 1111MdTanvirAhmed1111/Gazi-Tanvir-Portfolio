@@ -1,7 +1,6 @@
 import { FaArrowDown } from 'react-icons/fa'; // Arrow icon
-import { GiComputer } from 'react-icons/gi'; // Computer/laptop icon
-import { BsFillPersonFill } from 'react-icons/bs'; // User/person icon
- 
+import { SiNextdotjs, SiExpress, SiReact, SiPrisma, SiMongodb } from 'react-icons/si'; // Icons for Next.js, Express.js, React.js, Prisma, MongoDB
+
 const About = () => {
   return (
     <div id="webcrumbs">
@@ -15,7 +14,6 @@ const About = () => {
             <div className="w-2 h-2 bg-teal-400 rounded-full animate-bounce mt-1"></div>
           </div>
           <div className="mt-2">
-            {/* Using FaArrowDown instead of SVG */}
             <FaArrowDown className="text-teal-400" size={40} />
           </div>
         </div>
@@ -30,19 +28,34 @@ const About = () => {
         </div>
 
         <div className="absolute top-[310px] left-[130px] w-[480px] bg-gray-800 bg-opacity-90 rounded-xl p-6 shadow-lg transform transition-transform duration-300 hover:scale-[1.01]">
-          <div className="text-teal-400 font-mono">&lt;p&gt;</div>
+          <div className="text-teal-400 font-mono"></div>
           
           <div className="mt-2 mb-4">
             <h2 className="text-teal-400 text-xl font-mono font-bold mb-2">Hello!</h2>
             <p className="text-gray-200 leading-relaxed">
-              My name is Simon and I specialize in web development that utilizes <span className="text-teal-400 font-semibold">HTML</span>, <span className="text-teal-400 font-semibold">CSS</span>, <span className="text-teal-400 font-semibold">JS</span>, and <span className="text-teal-400 font-semibold">REACT</span> etc.
+              My name is Tanvir and I specialize in web development that utilizes{' '}
+              <span className="text-teal-400 font-semibold inline-flex items-center">
+                <SiNextdotjs className="mr-1" /> Next.js
+              </span>,{' '}
+              <span className="text-teal-400 font-semibold inline-flex items-center">
+                <SiExpress className="mr-1 text-white" /> Express.js
+              </span>,{' '}
+              <span className="text-teal-400 font-semibold inline-flex items-center">
+                <SiReact className="mr-1" /> React.js
+              </span>,{' '}
+              <span className="text-teal-400 font-semibold inline-flex items-center">
+                <SiPrisma className="mr-1" /> Prisma
+              </span>, and{' '}
+              <span className="text-teal-400 font-semibold inline-flex items-center">
+                <SiMongodb className="mr-1" /> MongoDB
+              </span>.
             </p>
             <p className="text-gray-200 leading-relaxed mt-3">
               I am a highly motivated individual dedicated to writing clear, concise, robust code that works.
             </p>
           </div>
           
-          <div className="text-teal-400 font-mono">&lt;/p&gt;</div>
+          <div className="text-teal-400 font-mono"></div>
         </div>
 
         <div className="absolute top-[220px] right-[140px] w-[380px] h-[280px] rounded-lg overflow-hidden shadow-xl transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">

@@ -12,6 +12,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -121,5 +122,13 @@ body {
   .animate-fade-in-up {
     animation: fadeInUp 0.5s ease-out forwards;
   }
+
+
+  @keyframes ping {
+    75%, 100% {
+      transform: scale(12.1);
+      opacity: 0;
+    }}
+  
 
 }

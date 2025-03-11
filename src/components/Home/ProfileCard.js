@@ -3,24 +3,24 @@ import { FaMailBulk, FaMapMarkerAlt, FaRegClock, FaGlobeAmericas, FaDownload } f
 
 const ProfileCard = () => {
   const profileInfo = [
-    { icon: FaMailBulk, label: "abdurrahman_sinan@hotmail.com" },
-    { icon: FaMapMarkerAlt, label: "Türkeeey" },
-    { icon: FaRegClock, label: "Full-time / Freelancer" },
-    { icon: FaGlobeAmericas, label: "www.sinantokalak.com" },
+    { icon: FaMailBulk, label: "tosibahabiba@gmail.com" },
+    { icon: FaMapMarkerAlt, label: "Dhaka,Bangladesh" },
+    { icon: FaRegClock, label: "Full-time Developer / Freelancer" },
+    { icon: FaGlobeAmericas, label: "tanvir.pothoczuto.xyz" },
   ];
 
   const skills = ['HTML', 'CSS', 'JS', 'React'];
 
   return (
-    <div className="w-[240px] sm:w-[280px] lg:w-[260px] mx-auto relative">
+    <div className="w-[240px] sm:w-[280px] lg:w-[260px] mx-auto relative animate-pulse">
       <div className="bg-gray-800 border-2 border-cyan-300 rounded-tl-[5rem] rounded-br-[5rem] p-5 flex flex-col items-center justify-center transition-all duration-300 hover:bg-gray-700">
         <div className="mb-3">
           <img
-            src="https://i.pravatar.cc/120"
+            src="/logo.ico"
             alt="Profile"
             className="w-16 mx-auto h-16 rounded-full border-2 border-cyan-300 mb-2 hover:scale-105 transition-transform duration-300"
           />
-          <h2 className="text-xl sm:text-2xl font-bold text-center">Sinan</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-center">Tanvir</h2>
           <p className="text-xs sm:text-sm text-center text-gray-400">Full-Stack Developer</p>
         </div>
 
