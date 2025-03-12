@@ -46,13 +46,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${openSans.variable} ${lato.variable} ${orbitron.variable}  ${geistMono.variable} ${poppins.variable} ${roboto.variable} antialiased`}
+        className={`${geistSans.variable} ${openSans.variable} ${lato.variable}  ${orbitron.variable}  ${geistMono.variable} ${poppins.variable} ${roboto.variable} antialiased`}
       >
+        <div className="bg-[#1a1e23]">
            <MouseFollowClient/>
         <Navbar/>
+        <div className="max-w-[90%]  mx-auto">
         {children}
+        </div>
     <Footer/>
-     
+    </div>
       </body>
     </html>
   );
