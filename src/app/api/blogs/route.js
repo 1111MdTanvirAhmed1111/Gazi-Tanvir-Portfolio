@@ -9,8 +9,12 @@ export async function GET(request) {
     const { searchParams } = new URL(request.url);
     const search = searchParams.get('search') || '';
     const sortBy = searchParams.get('sortBy') || 'createdAt';
+    const limit = parseInt(searchParams.get('limit')) ;  
+
+
 
     const blogs = await prisma.blog.findMany({
+      take:  limit? limit : undefined,
       where: {
         AND: [
           search ? {

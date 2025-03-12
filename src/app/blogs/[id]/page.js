@@ -5,9 +5,10 @@ import Slider from '@/components/BlogDetails/Slider';
 import CommentForm from '@/components/BlogDetails/CommentForm';
 import CommentsSection from '@/components/BlogDetails/CommentsSection';
 
-export default async function BlogPage() {
+export default async function BlogPage({params}) {
+  const {id} = await params;
   // Fetch all blogs from the provided API
-  const blogsResponse = await fetch('http://localhost:3000/api/blogs', { cache: 'no-store' });
+  const blogsResponse = await fetch('https://tanvir.pothoczuto.xyz/api/blogs?limit=3', { cache: 'no-store' });
   if (!blogsResponse.ok) throw new Error('Failed to fetch blogs');
   const blogsData = await blogsResponse.json();
 
