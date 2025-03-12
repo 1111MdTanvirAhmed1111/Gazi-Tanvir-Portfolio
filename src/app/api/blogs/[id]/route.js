@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 // GET: Fetch a single blog by ID
 export async function GET(request, { params }) {
   try {
-    const { id } = params;
+    const { id } = await params;
 
     const blog = await prisma.blog.findUnique({
       where: { id },
