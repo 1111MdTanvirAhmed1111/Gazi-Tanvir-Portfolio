@@ -45,6 +45,7 @@ export const lato = Lato({ subsets: ['latin'], weight: ['400', '700'], variable:
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <meta name="msvalidate.01" content="AF1BD6501856D238A7FD2A97BB6FB7DD" />
       <body
         className={`${geistSans.variable} ${openSans.variable} ${lato.variable}  ${orbitron.variable}  ${geistMono.variable} ${poppins.variable} ${roboto.variable} antialiased`}
       >
