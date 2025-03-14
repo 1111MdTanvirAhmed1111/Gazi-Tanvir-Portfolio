@@ -21,7 +21,7 @@ const ContentSection = () => {
       <h2 className={`${poppins.className} text-3xl sm:text-4xl lg:text-5xl font-bold mb-1 leading-tight`}>
         Hey
         <br />
-        I'm <span className="text-cyan-300">Gazi Tanvir Ahmed</span>,<br />
+        I'm <h1 className="text-cyan-300">Gazi Tanvir Ahmed</h1>,<br />
         Full-Stack Developer
   
       </h2>
