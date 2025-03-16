@@ -18,13 +18,12 @@ const ContentSection = () => {
   return (
     <div className="w-full lg:w-[60%] max-lg:text-center px-4 py-2 mx-auto">
       <div className="text-cyan-300 text-xs sm:text-sm mb-1">&lt;h1&gt;</div>
-      <h2 className={`${poppins.className} text-3xl sm:text-4xl lg:text-5xl font-bold mb-1 leading-tight`}>
+      <p className={`${poppins.className} text-3xl sm:text-4xl lg:text-5xl font-bold mb-1 leading-tight`}>
         Hey
         <br />
-        I'm <h1 className="text-cyan-300">Gazi Tanvir Ahmed</h1>,<br />
+        I'm <span className="text-cyan-300">Gazi Tanvir Ahmed</span>,<br />
         Full-Stack Developer
-  
-      </h2>
+      </p>
       <div className="text-cyan-300 text-xs sm:text-sm mb-4">&lt;/h1&gt;</div>
 
       <div className="text-cyan-300 text-xs sm:text-sm mb-1">&lt;p&gt;</div>
@@ -41,5 +40,6 @@ const ContentSection = () => {
     </div>
   );
 };
+
 
 export default ContentSection;
