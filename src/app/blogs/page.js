@@ -8,7 +8,6 @@ import Link from "next/link";
 
 const BlogPage = async () => {
 const blogs = await getAllBlogs()
-console.log(blogs, "sdsd")
   return (
     <div id="webcrumbs" className="bg-gray-800 min-h-screen">
       <div className="w-full max-w-7xl mx-auto py-12 px-6 text-white">
