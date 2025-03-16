@@ -2,7 +2,7 @@ import https from 'https'
 
 
   setInterval(() => {
-    https.get("https://gazi-tanvir-portfolio.onrender.com/");
+    https.get("https://tanvir.pothoczuto.xyz/");
   }, 45 * 1000);
 
 

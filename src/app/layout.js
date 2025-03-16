@@ -3,6 +3,8 @@ import "./globals.css";
 import { Navbar } from './../components/Navbar';
 import MouseFollowClient from './../components/MouseFollowClient';
 import Footer from '../components/Home/Footer';
+import { Suspense } from "react";
+import Loading from './loading';
 
 
 const orbitron = Orbitron({
@@ -53,7 +55,9 @@ export default function RootLayout({ children }) {
            <MouseFollowClient/>
         <Navbar/>
         <div className="max-w-[90%]  mx-auto">
+        <Suspense fallback={<Loading/>}>
         {children}
+        </Suspense>
         </div>
     <Footer/>
     </div>
