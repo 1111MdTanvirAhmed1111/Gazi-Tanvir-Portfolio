@@ -4,20 +4,39 @@ import { FaUser } from 'react-icons/fa';
 import Slider from '@/components/BlogDetails/Slider';
 import CommentForm from '@/components/BlogDetails/CommentForm';
 import CommentsSection from '@/components/BlogDetails/CommentsSection';
+import { getAllBlogs, getBlog } from '@/utils/blogs';
+
+export async function generateMetadata({ params }) {
+  const { id } =  await params;
+
+  try {
+    // Fetch the blog data based on the ID
+    const blog = await getBlog(id);
+
+    // Return the metadata with dynamic values
+    return {
+      title: blog.title || 'Blog Post',
+      description: blog.description || 'No description available for this blog post.',
+     
+    };
+  } catch (error) {
+    console.error('Error fetching blog:', error);
+    return {
+      title: 'Blog Post',
+      description: 'No description available for this blog post.',
+    };
+  }
+}
+
+
 
 export default async function BlogPage({params}) {
   const {id} = await params;
   // Fetch all blogs from the provided API
-  const blogsResponse = await fetch('https://tanvir.pothoczuto.xyz/api/blogs?limit=3', { cache: 'no-store' });
-  if (!blogsResponse.ok) throw new Error('Failed to fetch blogs');
-  const blogsData = await blogsResponse.json();
 
-  if (!blogsData.success || !blogsData.data.length) {
-    throw new Error('No blog data available');
-  }
+  const blog = await getBlog( id)
+  const blogsData = await getAllBlogs()
 
-  // Select the first blog post (for static /blog page)
-  const blog = blogsData.data[0];
 
   // Transform images for Slider
   const sliderImages = blog.images.map((image) => ({
@@ -27,7 +46,7 @@ export default async function BlogPage({params}) {
   }));
 
   // Static related posts (since API doesn't provide related posts)
-  const relatedPosts = blogsData.data.slice(1, 4).map((post) => ({
+  const relatedPosts = blogsData.slice(1, 4).map((post) => ({
     id: post.id,
     src: post.images[0]?.url || 'https://via.placeholder.com/800',
     alt: post.title,
@@ -66,7 +85,7 @@ export default async function BlogPage({params}) {
   ];
 
   // Static recent posts (using other blogs from the API)
-  const recentPosts = blogsData.data.slice(0, 4).map((post) => ({
+  const recentPosts = blogsData.slice(0, 4).map((post) => ({
     id: post.id,
     title: post.title,
     date: new Date(post.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
@@ -81,6 +100,9 @@ export default async function BlogPage({params}) {
     { name: "CSS & Styling", count: 21 },
   ];
 
+
+
+  
   return (
     <div id="webcrumbs">
       <div className="max-w-full font-sans bg-[#0a1f44] text-[#f0f4f7] mx-auto">

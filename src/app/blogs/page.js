@@ -1,15 +1,14 @@
 export const dynamic = 'force-dynamic';
 import SearchFilter from "@/components/Blogs/SearchFilter";
+import { getAllBlogs } from "@/utils/blogs";
 
-import { PrismaClient } from "@prisma/client";
 import Link from "next/link";
 
-const prisma = new PrismaClient()
 
 
 const BlogPage = async () => {
-const blogs = await prisma.blog.findMany({ include: { images: true ,tags: true } });
-console.log(blogs)
+const blogs = await getAllBlogs()
+console.log(blogs, "sdsd")
   return (
     <div id="webcrumbs" className="bg-gray-800 min-h-screen">
       <div className="w-full max-w-7xl mx-auto py-12 px-6 text-white">
