@@ -1,23 +1,18 @@
 
-'use client'
+
 import { submitContactForm } from "@/utils/actions/contact-actions";
-import {addToast} from "@heroui/react";
-import {Button} from "@heroui/react";
-import { useRouter } from 'next/navigation'
+
 
 
 
 export  function Contact() {
-const router = useRouter()
 
-  const handleSubmit = ()=>{
-router.push('/thank-you')
-  }
+
 
   return (
     
     <div className="min-h-[600px] bg-[#1a1e23] text-white font-sans p-8 mx-auto flex flex-col items-center justify-between">
-<Button color="primary">Button</Button>;
+
       <div className="w-[50%] mx-auto">
         <div className="flex flex-col items-center mb-10">
           <h2 className="text-4xl sm:text-5xl font-light mb-1 text-[#0ff5d4] relative">
@@ -33,7 +28,7 @@ router.push('/thank-you')
         </div>
 
         {/* Remove method="POST" */}
-        <form action={submitContactForm} onSubmit={handleSubmit} className="w-full">
+        <form action={submitContactForm} className="w-full">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
             <div className="flex flex-col">
               <label htmlFor="name" className="text-[#0ff5d4] text-sm mb-2">

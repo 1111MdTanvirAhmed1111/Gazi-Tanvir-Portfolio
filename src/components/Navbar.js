@@ -25,7 +25,7 @@ export const Navbar = () => {
           <div className="flex items-center">
             <span className="text-teal-400 font-mono text-xl mr-2">&lt;C/&gt;</span>
             <span className="text-white text-xl font-semibold hover:text-teal-400 transition-colors duration-300 cursor-pointer">
-              SinanTokmak
+              Tanvir 
             </span>
           </div>
   

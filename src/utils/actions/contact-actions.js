@@ -6,7 +6,9 @@ import { redirect } from 'next/navigation';
 import { prisma } from '@/utils/Prisma';
 
 export async function submitContactForm(formData) {
-  try {
+
+
+    // Input Validation
     if (!formData || typeof formData.get !== 'function') {
       throw new Error('Invalid form data received');
     }
@@ -29,36 +31,24 @@ export async function submitContactForm(formData) {
       throw new Error('Invalid email format');
     }
 
-    try {
-      await prisma.$connect();
-      console.log('Database connected successfully');
-
-      await prisma.contact.create({
+  
+    //  DB Operation
+    const createdMsg =   await prisma.contact.create({
         data: {
           name,
           email,
           message,
         },
       });
-    } catch (dbError) {
-      console.error('Database error:', dbError);
-      throw new Error(`Database error: ${dbError.message}`);
-    } finally {
-      await prisma.$disconnect();
-    }
 
-    // revalidatePath('/');
+      if(createdMsg){
+        redirect('/thank-you')
+      }
+else{
+  redirect('not-found')
+}
+   
     
-  } catch (error) {
-    console.error('Detailed error in submitContactForm:', {
-      error: error.message,
-      stack: error.stack,
-      formData: formData ? {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        message: formData.get('message'),
-      } : 'No formData received',
-    });
-    throw new Error(error.message || 'Failed to submit contact form. Please try again.');
-  }
+
+
 }

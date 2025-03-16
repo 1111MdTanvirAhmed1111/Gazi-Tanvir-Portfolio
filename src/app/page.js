@@ -14,7 +14,7 @@ function page() {
       <Header/>
       <TechBar/>
       <About/>
-      <Projects/>
+      {/* <Projects/> */}
       <Skills/>
       <Contact/>
     </div>
