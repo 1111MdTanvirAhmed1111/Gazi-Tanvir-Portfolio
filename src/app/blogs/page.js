@@ -1,6 +1,6 @@
-export const dynamic = 'force-dynamic';
+
 import SearchFilter from "@/components/Blogs/SearchFilter";
-import { getAllBlogs } from "@/utils/blogs";
+import { getAllBlogs } from "@/utils/actions/blogs";
 
 import Link from "next/link";
 

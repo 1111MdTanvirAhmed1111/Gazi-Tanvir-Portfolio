@@ -4,7 +4,7 @@ import { FaUser } from 'react-icons/fa';
 import Slider from '@/components/BlogDetails/Slider';
 import CommentForm from '@/components/BlogDetails/CommentForm';
 import CommentsSection from '@/components/BlogDetails/CommentsSection';
-import { getAllBlogs, getBlog } from '@/utils/blogs';
+import { getAllBlogs, getBlog } from '@/utils/actions/blogs';
 import { redirect } from 'next/navigation';
 
 

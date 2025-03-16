@@ -98,3 +98,30 @@ model Contact {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+
+
+
+model Settings {
+  id                String   @id @default("default")
+  // General settings
+  siteTitle         String   @default("My Portfolio")
+  siteDescription   String   @default("A showcase of my work and writing")
+  siteUrl           String   @default("https://example.com")
+  contactEmail      String   @default("contact@example.com")
+  
+  // Social media settings
+  twitter           String?
+  github            String?
+  linkedin          String?
+  instagram         String?
+  
+  // Appearance settings
+  darkMode          Boolean  @default(false)
+  accentColor       String   @default("#0070f3")
+  showAuthor        Boolean  @default(true)
+  showDate          Boolean  @default(true)
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}

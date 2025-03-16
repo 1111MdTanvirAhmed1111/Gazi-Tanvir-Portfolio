@@ -5,6 +5,7 @@ import MouseFollowClient from './../components/MouseFollowClient';
 import Footer from '../components/Home/Footer';
 import { Suspense } from "react";
 import Loading from './loading';
+import { HeroUiProvider } from "@/Providers/HeroUiProvider";
 
 
 const orbitron = Orbitron({
@@ -54,11 +55,13 @@ export default function RootLayout({ children }) {
         <div className="bg-[#1a1e23]">
            <MouseFollowClient/>
         <Navbar/>
+        <HeroUiProvider>
         <div className="max-w-[90%]  mx-auto">
         <Suspense fallback={<Loading/>}>
         {children}
         </Suspense>
         </div>
+        </HeroUiProvider>
     <Footer/>
     </div>
       </body>
