@@ -5,6 +5,7 @@ import Slider from '@/components/BlogDetails/Slider';
 import CommentForm from '@/components/BlogDetails/CommentForm';
 import CommentsSection from '@/components/BlogDetails/CommentsSection';
 import { getAllBlogs, getBlog } from '@/utils/blogs';
+import { redirect } from 'next/dist/server/api-utils';
 
 export async function generateMetadata({ params }) {
   const { id } =  await params;
@@ -12,6 +13,7 @@ export async function generateMetadata({ params }) {
   try {
     // Fetch the blog data based on the ID
     const blog = await getBlog(id);
+
 
     // Return the metadata with dynamic values
     return {
@@ -35,6 +37,9 @@ export default async function BlogPage({params}) {
   // Fetch all blogs from the provided API
 
   const blog = await getBlog( id)
+  if(!blog){
+    redirect('/not-found')
+  }
   const blogsData = await getAllBlogs()
 
 
