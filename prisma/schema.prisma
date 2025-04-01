@@ -6,7 +6,7 @@
 
 generator client {
   provider = "prisma-client-js"
-    binaryTargets = ["native", "debian-openssl-1.0.x","debian-openssl-1.1.x", "debian-openssl-3.0.x"]
+  binaryTargets = ["native", "debian-openssl-1.0.x","debian-openssl-1.1.x", "debian-openssl-3.0.x"]
 }
 
 datasource db {
@@ -23,7 +23,6 @@ model Project {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
   images      ProjectImage[]
-  
 }
 
 model ProjectImage {
@@ -35,8 +34,6 @@ model ProjectImage {
   project   Project  @relation(fields: [projectId], references: [id])
 }
 
-
-
 model Blog {
   id          String   @id @default(cuid())
   title       String
@@ -46,6 +43,8 @@ model Blog {
   updatedAt   DateTime @updatedAt
   images      BlogImage[]
   tags        Tags[]
+  categoryId  String?  // Add relation field for Category
+  category    Category? @relation(fields: [categoryId], references: [id], name: "CategoryBlogs") // Define relation name explicitly
 }
 
 model Tags {
@@ -57,18 +56,12 @@ model Tags {
   blogs     Blog   @relation(fields: [blogId], references: [id])
 }
 
-
 model BlogImage {
   id        String   @id @default(cuid())
   url       String
   blogId    String
   blog      Blog     @relation(fields: [blogId], references: [id])
 }
-
-
-
-
-
 
 model Experience {
   id          Int      @id @default(autoincrement())
@@ -99,9 +92,6 @@ model Contact {
   updatedAt DateTime @updatedAt
 }
 
-
-
-
 model Settings {
   id                String   @id @default("default")
   // General settings
@@ -124,4 +114,13 @@ model Settings {
   
   createdAt         DateTime @default(now())
   updatedAt         DateTime @updatedAt
+}
+
+model Category {
+  id          String   @id @default(cuid())
+  name        String   // Name of the category (e.g., "Technology", "Lifestyle")
+  description String?  // Optional description for the category
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  blogs       Blog[]   @relation("CategoryBlogs")  // One-to-many relation with Blog
 }

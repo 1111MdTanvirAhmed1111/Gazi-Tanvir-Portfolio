@@ -51,7 +51,7 @@ export const Navbar = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-teal-400 hover:text-teal-300 transition-colors duration-300 flex items-center"
+                className="text-teal-400 hover:text-teal-300 hover:scale-110  transition-all duration-300 flex items-center"
               >
                
                 <span className="scale-110 mx-2 translate-y-0.5">{link.name}</span>

@@ -6,9 +6,10 @@ import Link from "next/link";
 
 
 
-const BlogPage = async () => {
-const blogs = await getAllBlogs()
+const BlogPage = async ({searchParams,}) => {
 
+const searchTerm = await searchParams
+const blogs = await getAllBlogs(searchTerm.q)
 
   return (
     <div id="webcrumbs" className="bg-gray-800 min-h-screen">
