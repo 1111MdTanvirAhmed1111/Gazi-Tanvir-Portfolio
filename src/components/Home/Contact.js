@@ -11,7 +11,7 @@ export  function Contact() {
 
   return (
     
-    <div className="min-h-[600px] bg-[#1a1e23] text-white font-sans p-8 mx-auto flex flex-col items-center justify-between">
+    <div className="min-h-[600px]  text-white font-sans p-8 mx-auto flex flex-col items-center justify-between">
 
       <div className="w-[50%] mx-auto">
         <div className="flex flex-col items-center mb-10">

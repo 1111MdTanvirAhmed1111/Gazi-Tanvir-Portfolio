@@ -1,14 +1,16 @@
 "use client";
 import React, { useState } from "react";
-import { FaHome, FaSearch, FaInstagram, FaDiscord, FaGithub } from "react-icons/fa"; // Importing icons from React Icons
+import { FaHome, FaSearch, FaInstagram, FaDiscord, FaGithub, FaBlogger } from "react-icons/fa"; // Importing icons from React Icons
+import { IoPersonSharp } from "react-icons/io5";
+import Link from "next/link";
 
 export const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
   
     const navLinks = [
       { name: "Home", icon: <FaHome className="h-5 w-5 text-teal-400" />, href: "/" },
-      { name: "Blogs", icon: null, href: "/blogs" },
-      { name: "About", icon: null, href: "/about" },
+      { name: "Blogs", icon:  <FaBlogger className="h-5 w-5 text-teal-400" />, href: "/blogs" },
+      { name: "About", icon: <IoPersonSharp className="h-5 w-5 text-teal-400" />, href: "/about" },
     ];
   
     const socialLinks = [
@@ -46,14 +48,15 @@ export const Navbar = () => {
           {/* Desktop Navbar links */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 className="text-teal-400 hover:text-teal-300 transition-colors duration-300 flex items-center"
               >
+               
+                <span className="scale-110 mx-2 translate-y-0.5">{link.name}</span>
                 {link.icon && <span className="mr-2">{link.icon}</span>}
-                <span>{link.name}</span>
-              </a>
+              </Link>
             ))}
   
             {/* Search input */}

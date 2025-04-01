@@ -26,7 +26,7 @@ export const Skills = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-b from-[#1a1e23] to-[#252a31] py-16">
+    <section className="py-16">
       <div className="w-full max-w-6xl mx-auto px-6 md:px-10 text-white font-sans">
         <div className="flex flex-col items-center">
           {/* Header with Icon and Code Brackets */}

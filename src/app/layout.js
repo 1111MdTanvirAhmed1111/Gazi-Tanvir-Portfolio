@@ -59,33 +59,49 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <meta name="msvalidate.01" content="AF1BD6501856D238A7FD2A97BB6FB7DD" />
       <body
-        className={`${geistSans.variable} overflow-x-hidden ${openSans.variable} ${lato.variable}  ${orbitron.variable}  ${geistMono.variable} ${poppins.variable} ${roboto.variable} antialiased`}
-      >
-        
-         
-        <StartLoadProvider/>
-         <div className="bg-[#1a1e23]">
+        className={`${geistSans.variable} overflow-x-hidden ${openSans.variable} ${lato.variable}  ${orbitron.variable}  ${geistMono.variable} ${poppins.variable} ${roboto.variable} antialiased relative`}>
+        <div className="fixed inset-0 -z-10 bg-[#020817] bg-[url('/design.svg')] bg-repeat opacity-20"></div>
+        <div>
+
+
            <MouseFollowClient/>
         <Navbar/>
+
+        
         <HeroUiProvider>
         <div className=" mx-auto">
           <Suspense fallback={<Loading/>}>
-        {children}
+          <div className="bg-sky-950">
+
+
+
+        
+          <div style={
+            {
+              backgroundImage: "url('data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.05)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e')",
+              backgroundRepeat: "repeat",
+              backgroundSize: "10px 10px",
+              backgroundPosition: "0 0",
+              backgroundAttachment: "fixed",
+
+            }
+          }>
+          {children}
+          </div>
+
+
+          </div>
+  
         </Suspense> 
         </div>
         </HeroUiProvider>
+
+
+
     <Footer/>
   
     </div>
    
-      
-         
-         
-
-        
-
-
-
       </body>
     </html>
   );
