@@ -1,5 +1,5 @@
 import ServerPart from "@/components/Blogs/ServerPart";
-
+import SearchFilterBypass from "@/components/Blogs/SearchFilterBypass";
 export const metadata = {
   title: 'Blog Posts | Gazi Tanvir',
   description: 'Read my thoughts on technology, development, and business. Subscribe to stay updated with the latest insights.',
