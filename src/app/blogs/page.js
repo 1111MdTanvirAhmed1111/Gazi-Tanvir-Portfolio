@@ -1,15 +1,21 @@
-'use server'
 import SFilterBypass from "@/components/Blogs/SFilterBypass";
 import { getAllBlogs } from "@/utils/actions/blogs";
-
 import Link from "next/link";
 
+export const metadata = {
+  title: 'Blog Posts | Gazi Tanvir',
+  description: 'Read my thoughts on technology, development, and business. Subscribe to stay updated with the latest insights.',
+  openGraph: {
+    title: 'Blog Posts | Gazi Tanvir',
+    description: 'Read my thoughts on technology, development, and business. Subscribe to stay updated with the latest insights.',
+    type: 'website',
+  },
+};
 
+export const revalidate = 3600; // Revalidate every hour
 
-const BlogPage = async ({searchParams,}) => {
-
-const searchTerm = await searchParams
-const blogs = await getAllBlogs(searchTerm.q)
+const BlogPage = async ({ searchParams }) => {
+  const blogs = await getAllBlogs(searchParams?.q)
 
   return (
     <div id="webcrumbs" className="bg-gray-800 min-h-screen">
