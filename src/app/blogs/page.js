@@ -1,5 +1,5 @@
-
-import SearchFilter from "@/components/Blogs/SearchFilter";
+'use server'
+import SFilterBypass from "@/components/Blogs/SFilterBypass";
 import { getAllBlogs } from "@/utils/actions/blogs";
 
 import Link from "next/link";
@@ -29,7 +29,7 @@ const blogs = await getAllBlogs(searchTerm.q)
           </button>
         </div>
 
-        <SearchFilter/>
+        <SFilterBypass/>
         {/* Blog List */}
         <div className="space-y-10">
           {blogs.map((blog, index) => (
