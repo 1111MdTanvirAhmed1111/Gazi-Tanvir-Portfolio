@@ -1,9 +1,13 @@
 
 // components/ContentSection.js
-import { Poppins, Roboto } from 'next/font/google';
+import { Poppins, Roboto, Lobster } from 'next/font/google';
 import { Image } from 'next/image';
+import { lobster } from './ContentSection';
 
-
+const lobster = Lobster({
+  weight: ['400', '600', '700'],
+  subsets: ['latin'],
+});
 const poppins = Poppins({
   weight: ['400', '600', '700'],
   subsets: ['latin'],
@@ -21,7 +25,7 @@ const ContentSection = () => {
       <p className={`${poppins.className} text-3xl sm:text-4xl lg:text-5xl font-bold mb-1 leading-tight`}>
         Hey
         <br />
-        I'm <span className="text-cyan-300">Gazi Tanvir Ahmed</span>,<br />
+        I'm <span className={`text-cyan-300 ${lobster.className}`}>Gazi Tanvir Ahmed</span>,<br />
         Full-Stack Developer
       </p>
       <div className="text-cyan-300 text-xs sm:text-sm mb-4">&lt;/h1&gt;</div>

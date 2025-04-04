@@ -23,7 +23,7 @@ export const Navbar = () => {
   
     return (
       <div id="webcrumbs" className="sticky top-0 left-0 w-full z-50">
-        <div className="w-full bg-gray-800 py-4 px-6 flex items-center justify-between relative">
+        <div className="w-full  bg-[#00516b] border-white border-b-2 py-4 px-6 flex items-center justify-between relative">
           <div className="flex items-center">
             <span className="text-teal-400 font-mono text-xl mr-2">&lt;C/&gt;</span>
             <span className="text-white text-xl font-semibold hover:text-teal-400 transition-colors duration-300 cursor-pointer">

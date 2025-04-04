@@ -1,5 +1,5 @@
 
-import { Geist, Geist_Mono , Poppins, Roboto , Orbitron, Open_Sans, Lato,  } from "next/font/google";
+import { Geist, Geist_Mono ,Lobster, Poppins, Roboto , Orbitron, Open_Sans, Lato,  } from "next/font/google";
 import "./globals.css";
 
 import { Navbar } from './../components/Navbar';
@@ -11,6 +11,8 @@ import { HeroUiProvider } from "@/Providers/HeroUiProvider";
 
 import StartLoadProvider from './../Providers/StartLoadProvider';
 import Loading from "./loading";
+
+
 
 
 const orbitron = Orbitron({
@@ -71,7 +73,7 @@ export default function RootLayout({ children }) {
         <HeroUiProvider>
         <div className=" mx-auto">
           <Suspense fallback={<Loading/>}>
-          <div className="bg-[#00516b] squre" style={
+          <div className="bg-[#00516b] " style={
             {
               backgroundImage: "url('data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.05)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e')",
               backgroundRepeat: "repeat",
@@ -85,9 +87,9 @@ export default function RootLayout({ children }) {
 
 
         
-      
+      <div className="squre ">
           {children}
-        
+        </div>
 
 
           </div>

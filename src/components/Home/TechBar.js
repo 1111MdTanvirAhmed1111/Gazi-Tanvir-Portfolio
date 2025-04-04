@@ -12,7 +12,7 @@ const TechBar = () => {
   ];
 
   return (
-    <div className="overflow-hidden relative w-full bg-gray-800 py-6">
+    <div className="overflow-hidden relative w-full backgrop-blur-sm bg-[#004b64] py-6">
       <ul className="techs flex animateMarquee space-x-16 text-white text-2xl">
         {techList.map((tech, index) => (
           <li key={index} className="tech drop-shadow-3xl animate-pulse ">{tech}</li>
