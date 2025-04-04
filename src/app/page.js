@@ -4,9 +4,9 @@ import About from '../components/Home/About';
 
 import TechBar from '@/components/Home/TechBar';
 import Sidebar from '@/components/Home/Sidebar';
-import { Contact } from '../components/Home/Contact';
+import { Contact } from '@/components/Home/Contact';
 import { Skills } from '../components/Home/Skills';
-import Projects from './../components/Home/Projects';
+import {ProjectAccordion} from '../components/Home/ProjectAccordin'
 function page() {
   return (
     <div>
@@ -14,7 +14,7 @@ function page() {
       <Header/>
       <TechBar/>
       <About/>
-      {/* <Projects/> */}
+      <ProjectAccordion/>
       <Skills/>
       <Contact/>
     </div>
