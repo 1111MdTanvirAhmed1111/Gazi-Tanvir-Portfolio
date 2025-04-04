@@ -2,10 +2,10 @@
 // components/ContentSection.js
 import { Poppins, Roboto, Lobster } from 'next/font/google';
 import { Image } from 'next/image';
-import { lobster } from './ContentSection';
+
 
 const lobster = Lobster({
-  weight: ['400', '600', '700'],
+  weight: '400',
   subsets: ['latin'],
 });
 const poppins = Poppins({
