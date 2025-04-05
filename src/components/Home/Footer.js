@@ -1,4 +1,3 @@
-import React from "react"
 
 const Footer = () => {
   // Define the links and social media data in arrays

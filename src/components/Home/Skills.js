@@ -18,11 +18,11 @@ export const Skills = () => {
   ];
 
   const techStack = [
-    { icon: <SiNextdotjs className="text-4xl text-white" />, name: 'Next.js', color: ' scale-190 hover:scale-210 ' }, // Next.js is black-themed
-    { icon: <SiExpress className="text-4xl text-white" />, name: 'Express.js', color: 'from-gray-500 to-gray-700' }, // Express.js in white
-    { icon: <SiReact className="text-4xl text-white" />, name: 'React.js', color: 'from-cyan-500 to-cyan-600' }, // React's cyan theme
-    { icon: <SiPrisma className="text-4xl text-white" />, name: 'Prisma', color: 'from-blue-600 to-blue-800' }, // Prisma's blue theme
-    { icon: <SiMongodb className="text-4xl text-white" />, name: 'MongoDB', color: 'from-green-500 to-green-700' }, // MongoDB's green theme
+    { icon: <SiNextdotjs />, name: 'Next.js', }, // Next.js is black-themed
+    { icon: <SiExpress />, name: 'Express.js',  }, // Express.js in white
+    { icon: <SiReact />, name: 'React.js', }, // React's cyan theme
+    { icon: <SiPrisma  />, name: 'Prisma',  }, // Prisma's blue theme
+    { icon: <SiMongodb  />, name: 'MongoDB',  }, // MongoDB's green theme
   ];
 
   return (
@@ -72,7 +72,7 @@ export const Skills = () => {
             {techStack.map((tech, index) => (
               <div key={index} className="flex flex-col items-center group ">
                 <div
-                  className={` rounded-full animate-pulse bg-gradient-to-br p-2 ${tech.color} flex items-center justify-center mb-4 transform transition-all duration-300 scale-140 group-hover:scale-180 group-hover:rotate-6 shadow-lg`}
+                  className={`text-cyan-500 text-4xl rounded-full animate-pulse bg-gradient-to-br p-2 ${tech.color} flex items-center justify-center mb-4 transform transition-all duration-300 scale-140 group-hover:scale-180 group-hover:rotate-6 shadow-lg`}
                 >
                   {tech.icon}
                 </div>
