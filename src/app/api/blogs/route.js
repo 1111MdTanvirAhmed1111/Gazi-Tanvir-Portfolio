@@ -1,4 +1,6 @@
 import { prisma } from '@/app/lib/Prisma';
+import { NextResponse } from 'next/server';
+
 // GET: Fetch all blogs or filter them
 export async function GET(request) {
   try {
@@ -29,7 +31,7 @@ export async function GET(request) {
       },
     });
 
-    return NextResponse.json({
+    new NextResponse.json({
       success: true,
       data: blogs,
     }, { status: 200 });
@@ -39,8 +41,6 @@ export async function GET(request) {
       success: false,
       error: 'Internal Server Error',
     }, { status: 500 });
-  } finally {
-    await prisma.$disconnect();
   }
 }
 

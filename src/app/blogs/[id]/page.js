@@ -113,7 +113,7 @@ export default async function BlogPage({params}) {
   
   return (
     <div id="webcrumbs">
-      <div className="max-w-full font-sans bg-[#0a1f44] text-[#f0f4f7] mx-auto">
+      <div className="max-w-full font-sans text-[#f0f4f7] mx-auto">
         {/* Page Header */}
         <header className="py-8 px-4 sm:px-6 border-b border-[#2a003f]/40">
           <h1 className="text-2xl sm:text-4xl font-bold mb-2 transition-all duration-300 hover:text-[#00bcd4] text-white text-shadow">
@@ -155,7 +155,7 @@ export default async function BlogPage({params}) {
             </article>
 
             {/* Static Call to Action */}
-            <div className="bg-gradient-to-r from-[#2a003f] to-[#0a1f44] p-6 rounded-lg shadow-lg mt-12 border border-[#00bcd4]/30">
+            <div className="bg-[#005a83] p-6 rounded-lg shadow-lg mt-12 border border-[#00bcd4]/30">
               <h3 className="text-lg sm:text-xl font-bold mb-2 text-white">Want to learn more?</h3>
               <p className="mb-4 text-gray-300">
                 Subscribe to my newsletter for weekly tips, tutorials, and insights...
@@ -174,7 +174,7 @@ export default async function BlogPage({params}) {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {relatedPosts.map((post, index) => (
                   <div key={index} className="group">
-                    <div className="rounded-lg overflow-hidden shadow-md bg-[#2a003f] border border-[#00bcd4]/10">
+                    <div className="rounded-lg overflow-hidden shadow-md bg-[#005a83] border border-[#00bcd4]/10">
                       <img
                         src={post.src}
                         alt={post.alt}
@@ -206,7 +206,7 @@ export default async function BlogPage({params}) {
           </div>
 
           {/* Sidebar */}
-          <div className="w-full lg:w-1/4 p-4 sm:p-6 bg-[#2a003f]/70 border-t lg:border-t-0 lg:border-l border-[#00bcd4]/30">
+          <div className="w-full lg:w-1/4 p-4 sm:p-6 bg-[#005a83]/70 border-t lg:border-t-0 lg:border-l border-[#00bcd4]/30">
             <div className="mb-8">
               <h3 className="text-base sm:text-lg font-bold mb-4 text-[#00bcd4]">About the Author</h3>
               <div className="flex items-center space-x-3 mb-3">

@@ -10,6 +10,7 @@ export const Navbar = () => {
     const navLinks = [
       { name: "Home", icon: <FaHome className="h-5 w-5 text-teal-400" />, href: "/" },
       { name: "Blogs", icon:  <FaBlogger className="h-5 w-5 text-teal-400" />, href: "/blogs" },
+      { name: "Projects", icon: <FaSearch className="h-5 w-5 text-teal-400" />, href: "/projects" },
       { name: "About", icon: <IoPersonSharp className="h-5 w-5 text-teal-400" />, href: "/about" },
     ];
   

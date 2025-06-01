@@ -14,6 +14,11 @@ export const revalidate = 3600; // Revalidate every hour
 
 const BlogPage = async ({ searchParams }) => {
  
+  const search = searchParams.search || '';
+  const searchValidate = async ()=>{
+   search? searchParams.search : ''
+   return search
+  }
 
   return (
    <ServerPart search={searchParams}>

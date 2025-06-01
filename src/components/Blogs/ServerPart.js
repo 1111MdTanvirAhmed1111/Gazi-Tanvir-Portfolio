@@ -5,7 +5,7 @@ async function ServerPart({search, children}) {
     const blogs = await getAllBlogs(search)
 
   return (
-    <div id="webcrumbs" className="bg-gray-800 min-h-screen">
+    <div id="webcrumbs" className="min-h-screen">
     <div className="w-full max-w-7xl mx-auto py-12 px-6 text-white">
       {/* Header */}
       <h1 className="text-4xl font-bold text-center mb-2 text-cyan-400 

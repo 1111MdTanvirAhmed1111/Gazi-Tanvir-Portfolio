@@ -24,7 +24,7 @@ const Component = () => {
 
     return (
         <div id="webcrumbs">
-            <div className="min-h-[600px] bg-[#1D2731] flex flex-col items-center justify-center p-12 text-[#D1D9E6] font-sans w-full">
+            <div className="min-h-[600px] flex flex-col items-center justify-center p-12 text-[#D1D9E6] font-sans w-full">
                 <div className="text-center max-w-[100%] sm:max-w-[600px] mb-10 px-4">
                     <div className="flex justify-center mb-6">
                         <svg
