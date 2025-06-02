@@ -23,7 +23,7 @@ export const Navbar = () => {
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
     return (
-      <div id="webcrumbs" className="sticky top-0 left-0 w-full z-50">
+      <div  className="sticky top-0 left-0 w-full z-50">
         <div className="w-full  bg-[#00516b] border-white border-b-2 py-4 px-6 flex items-center justify-between relative">
           <div className="flex items-center">
             <span className="text-teal-400 font-mono text-xl mr-2">&lt;C/&gt;</span>
@@ -74,19 +74,13 @@ export const Navbar = () => {
   
             {/* Social Media Icons */}
             <div className="flex items-center space-x-6">
-  {socialLinks.map((link) => (
-    <div key={link.name} className="group relative">
-      <a
-        href={link.href}
-        className="transition-transform duration-300 transform hover:scale-110 hover:text-teal-300 flex items-center"
-      >
-          <span className="">{link.icon}</span>
-        <span className="ml-2 group-hover:opacity-100 transition-all duration-300 text-teal-300 hover:text-white">
-          {link.name}
-        </span>
-      </a>
-    </div>
-  ))}
+
+
+<SocialLinksA />
+
+
+
+
 </div>
 
           </div>
@@ -127,3 +121,22 @@ export const Navbar = () => {
       </div>
     );
   };
+
+  const SocialLinksA = ()=>{
+    
+  return (
+  socialLinks.map((link) => (
+    <div key={link.name} className="group relative">
+      <a
+        href={link.href}
+        className="transition-transform duration-300 transform hover:scale-110 hover:text-teal-300 flex items-center"
+      >
+          <span className="">{link.icon}</span>
+        <span className="ml-2 group-hover:opacity-100 transition-all duration-300 text-teal-300 hover:text-white">
+          {link.name}
+        </span>
+      </a>
+    </div>
+  ))
+)
+}
