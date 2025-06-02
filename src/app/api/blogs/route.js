@@ -63,9 +63,15 @@ export async function POST(request) {
         description: body.description || null,
         content: body.content,
         images: body.images ? {
-          create: body.images.map(image => ({
-            url: image.url,
-          })),
+          create: body.images.map(image =>{
+
+
+            
+
+            return {
+            url: image.url, }
+
+          }),
         } : undefined,
       },
       include: {
