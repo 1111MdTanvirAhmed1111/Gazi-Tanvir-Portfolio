@@ -124,6 +124,13 @@ export const Navbar = () => {
 
   const SocialLinksA = ()=>{
     
+
+    const socialLinks = [
+      { name: "Instagram", icon: <FaInstagram className="h-5 w-5 text-white" />, href: "#" },
+      { name: "Discord", icon: <FaDiscord className="h-5 w-5 text-white" />, href: "#" },
+      { name: "GitHub", icon: <FaGithub className="h-5 w-5 text-white" />, href: "#" },
+    ];
+
   return (
   socialLinks.map((link) => (
     <div key={link.name} className="group relative">
